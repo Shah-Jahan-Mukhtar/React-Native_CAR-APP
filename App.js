@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -6,7 +7,12 @@ import {
   SafeAreaView,
   Image,
   TextInput,
+  FlatList,
 } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import Services from "./components/Services";
+
+const SERVICE = ["Services", "Accessories", "Rent Car", "Buy Car"];
 
 // import Icon from "react-native-icons";
 
@@ -22,30 +28,20 @@ export default function App() {
             flexDirection: "row",
           }}
         >
-          <Image
-            source={require("./assets/menu.png")}
-            style={{
-              marginTop: "8%",
-              marginLeft: 20,
-              height: "40%",
-              width: "12%",
-              // flexDirection: "row",
-              // display: "flex",
-            }}
+          <Ionicons
+            style={{ marginTop: "4%", marginLeft: "6%" }}
+            name="menu"
+            size={32}
+            color="white"
           />
-          <Image
-            source={require("./assets/searchIcon.png")}
-            style={{
-              marginTop: "10%",
-              marginLeft: "70%",
-              height: "28%",
-              width: "8%",
-              // flexDirection: "row",
-              // display: "flex",
-            }}
+
+          <Ionicons
+            style={{ marginTop: "4%", marginLeft: "70%" }}
+            name="search"
+            size={32}
+            color="white"
           />
         </View>
-
         <View style={{ marginTop: "0%" }}>
           <Image
             source={require("./assets/carPic.jpg")}
@@ -61,35 +57,41 @@ export default function App() {
         </View>
 
         <StatusBar style="auto" />
-        <View
-          style={{
-            // marginTop: "%",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Image
-            source={require("./assets/searchIcon.png")}
-            style={{
-              marginLeft: "70%",
-              height: "20%",
-              width: "10%",
-            }}
-          />
-          <TextInput
-            style={{
-              width: "90%",
-              height: "30%",
+        <View style={{ height: "12%" }}>
+          <View>
+            <TextInput
+              style={{
+                width: "90%",
+                height: "90%",
+                alignContent: "center",
+                justifyContent: "center",
+                marginLeft: "5%",
+                marginTop: "4%",
 
-              borderRadius: 20,
-              shadowColor: "#000",
-              shadowOffset: { width: 0, height: 1 },
-              shadowOpacity: 0.2,
-              shadowRadius: 4,
-              elevation: 1,
-              justifyContent: "center",
-            }}
-            placeholder="Search"
+                borderRadius: 40,
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 1 },
+                shadowOpacity: 0.2,
+                shadowRadius: 4,
+                elevation: 1,
+                justifyContent: "center",
+              }}
+              placeholder="Search"
+            />
+            <Ionicons
+              name="search"
+              size={32}
+              color="red"
+              style={{ marginTop: "-9%", marginLeft: "82%" }}
+            />
+          </View>
+        </View>
+        <View>
+          <FlatList
+            style={{}}
+            data={SERVICE}
+            keyExtractor={(item) => item.data}
+            renderItem={({ item }) => <Services name={item} />}
           />
         </View>
       </View>
@@ -99,7 +101,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FF0000",
+    backgroundColor: "#9F000F",
     // alignItems: "center",
     // justifyContent: "center",
     height: "51%",
