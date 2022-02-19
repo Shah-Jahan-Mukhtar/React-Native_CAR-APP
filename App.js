@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -17,13 +17,14 @@ const SERVICE = ["Services", "Accessories", "Rent Car", "Buy Car"];
 // import Icon from "react-native-icons";
 
 export default function App() {
+  const [value, setValue] = useState("");
   return (
     <SafeAreaView style={{ marginTop: 25 }}>
       <View style={styles.container}>
         <View
           style={{
             marginTop: "0%",
-            height: "50%",
+            height: "45%",
             width: "100%",
             flexDirection: "row",
           }}
@@ -42,7 +43,7 @@ export default function App() {
             color="white"
           />
         </View>
-        <View style={{ marginTop: "0%" }}>
+        <View style={{ marginTop: "0%", height: "100%" }}>
           <Image
             source={require("./assets/carPic.jpg")}
             style={{
@@ -57,41 +58,48 @@ export default function App() {
         </View>
 
         <StatusBar style="auto" />
-        <View style={{ height: "12%" }}>
-          <View>
-            <TextInput
-              style={{
-                width: "90%",
-                height: "90%",
-                alignContent: "center",
-                justifyContent: "center",
-                marginLeft: "5%",
-                marginTop: "4%",
+        {/* <View style={{ height: "12%" }}> */}
+        <TextInput
+          style={{
+            width: "90%",
+            height: "20%",
+            alignContent: "center",
+            justifyContent: "center",
+            marginLeft: "5%",
+            marginTop: "4%",
+            padding: 12,
 
-                borderRadius: 40,
-                shadowColor: "#000",
-                shadowOffset: { width: 0, height: 1 },
-                shadowOpacity: 0.2,
-                shadowRadius: 4,
-                elevation: 1,
-                justifyContent: "center",
-              }}
-              placeholder="Search"
-            />
-            <Ionicons
-              name="search"
-              size={32}
-              color="red"
-              style={{ marginTop: "-9%", marginLeft: "82%" }}
-            />
-          </View>
-        </View>
-        <View>
+            borderRadius: 40,
+            shadowColor: "#000",
+            shadowOffset: { width: 0, height: 1 },
+            shadowOpacity: 0.2,
+            shadowRadius: 4,
+            elevation: 1,
+            justifyContent: "center",
+          }}
+          placeholder="Search"
+          value={value}
+          onChangeText={setValue}
+        />
+        <Ionicons
+          name="search"
+          size={32}
+          color="red"
+          style={{ marginTop: "-9.5%", marginLeft: "82%" }}
+        />
+
+        <View style={{ alignItems: "center" }}>
           <FlatList
-            style={{}}
+            style={{
+              marginTop: "5%",
+              backgroundColor: "#F62817",
+              borderRadius: 15,
+            }}
             data={SERVICE}
-            keyExtractor={(item) => item.data}
+            keyExtractor={(item) => item}
             renderItem={({ item }) => <Services name={item} />}
+            horizontal
+            showsHorizontalScrollIndicator={false}
           />
         </View>
       </View>
