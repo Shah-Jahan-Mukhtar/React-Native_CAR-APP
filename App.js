@@ -10,6 +10,7 @@ import {
   FlatList,
   TouchableOpacity,
   Pressable,
+  TouchableHighlight,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Services from "./components/Services";
@@ -25,7 +26,10 @@ export default function App() {
     <SafeAreaView style={{ marginTop: 25 }}>
       <View>
         <View
-          style={{ height: "40%", width: "100%", backgroundColor: "#9F000F" }}
+          style={{
+            backgroundColor: "#9F000F",
+            flex: 10,
+          }}
         >
           <View
             style={{
@@ -63,6 +67,7 @@ export default function App() {
             />
           </View>
         </View>
+
         <StatusBar style="auto" />
 
         <View style={{ height: "20%", marginTop: "20%" }}>
@@ -100,6 +105,8 @@ export default function App() {
                   marginLeft: "82%",
                   height: "120%",
                   width: "10%",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               />
             </TouchableOpacity>
@@ -115,18 +122,9 @@ export default function App() {
             data={SERVICE}
             keyExtractor={(item) => item}
             renderItem={({ item }) => (
-              <Pressable onPress={}
-                style={({ pressed }) => {
-                  backgroundColor: pressed ? "black" : "white";
-                }}
-              >
-                {({ pressed }) => (
-                  <Services
-                    name={item}
-                    style={{ color: pressed ? "white" : "black" }}
-                  />
-                )}
-              </Pressable>
+              <TouchableOpacity onPress={() => {}}>
+                <Services name={item} />
+              </TouchableOpacity>
             )}
             horizontal
             showsHorizontalScrollIndicator={false}
