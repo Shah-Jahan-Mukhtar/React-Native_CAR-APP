@@ -27,8 +27,11 @@ export default function App() {
       <View>
         <View
           style={{
+            // height: "40%",
+            // width: "100%",
             backgroundColor: "#9F000F",
-            flex: 10,
+            flex: 1,
+            flexGrow: 10,
           }}
         >
           <View
