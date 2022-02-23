@@ -10,6 +10,7 @@ const Services = (props) => {
             padding: 10,
             alignItems: "center",
             justifyContent: "center",
+            color: "white",
           },
         ]}
       >
