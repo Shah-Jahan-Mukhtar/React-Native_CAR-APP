@@ -25,14 +25,15 @@ export default function App() {
   return (
     <SafeAreaView style={{ marginTop: 25 }}>
       <View>
+        <View style={{ flex: 0.1, backgroundColor: "red" }}></View>
         <View
-          style={{
-            // height: "40%",
-            // width: "100%",
-            backgroundColor: "#9F000F",
-            flex: 1,
-            flexGrow: 10,
-          }}
+          style={
+            {
+              // height: "40%",
+              // width: "100%",
+              // backgroundColor: "#9F000F",
+            }
+          }
         >
           <View
             style={{
