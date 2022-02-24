@@ -12,12 +12,13 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import Services from "../components/Services";
+import Screen1 from "./screen1";
 
 import React, { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 
 const SERVICE = ["Services", "Accessories", "Rent Car", "Buy Car"];
-const Screen2 = () => {
+const Screen2 = ({ navigation }) => {
   const [value1, setValue1] = useState("");
 
   return (
@@ -38,7 +39,7 @@ const Screen2 = () => {
               flexDirection: "row",
             }}
           >
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate("screen1")}>
               <Ionicons
                 style={{ marginTop: "10%", marginLeft: "10%" }}
                 name="menu"

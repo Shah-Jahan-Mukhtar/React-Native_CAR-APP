@@ -14,12 +14,16 @@ const Stack = createStackNavigator();
 // import Icon from "react-native-icons";
 
 export default function App() {
-  <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Screen2" component={Screen2} />
-      <Stack.Screen name="Screen1" component={Screen1} />
-    </Stack.Navigator>
-  </NavigationContainer>;
-
-  return <Screen2 />;
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          style={{ color: "red" }}
+          name="Home"
+          component={Screen2}
+        />
+        <Stack.Screen name="screen1" component={Screen1} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
