@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 const Screen1 = () => {
   return (
     <View>
-      <Text>screen1</Text>
+      <Text>Hello world</Text>
     </View>
   );
 };
