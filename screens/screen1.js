@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -12,7 +12,23 @@ const Screen1 = () => {
       }}
     >
       <View style={{ backgroundColor: "#FF8C00", width: "45%" }}>
-        <Text>Hello world</Text>
+        <Image
+          source={require("../assets/man.png")}
+          style={{ width: "80%", height: "20%", marginTop: "-20%" }}
+        />
+        <View
+          style={{
+            borderBottomColor: "black",
+            borderBottomWidth: 1,
+            width: "70%",
+            justifyContent: "center",
+            alignItems: "center",
+            marginLeft: "8%",
+          }}
+        ></View>
+        <View>
+          <Text style={{ fontSize: 15 }}>HANNAH PARIZARES</Text>
+        </View>
       </View>
       <View
         style={{
