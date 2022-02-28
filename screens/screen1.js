@@ -5,11 +5,12 @@ import {
   ScrollView,
   SafeAreaView,
   Overlay,
-  Flatlist,
+  FlatList,
 } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import DeprecatedViewStylePropTypes from "react-native/Libraries/DeprecatedPropTypes/DeprecatedViewStylePropTypes";
+import FlatlistLyfe from "../components/FlatlistLyfe";
 
 const Screen1 = () => {
   return (
@@ -22,7 +23,7 @@ const Screen1 = () => {
       >
         <View
           style={{
-            backgroundColor: "#FF8C00",
+            backgroundColor: "rgb(255,220,100)",
             width: "45%",
 
             alignItems: "center",
@@ -241,7 +242,47 @@ const Screen1 = () => {
             >
               2022 Lab Technician
             </Text>
+
+            <FlatList
+              data={[
+                {
+                  key: "Carried Out everday tasks as part of ongoing research study",
+                },
+                {
+                  key: "Reported findings contributed hypothesis and helped co-author a prffesional findings report",
+                },
+              ]}
+              renderItem={({ item }) => <FlatlistLyfe name={item.key} />}
+            />
+            <Text
+              style={{
+                color: "white",
+                marginLeft: 10,
+                marginTop: 10,
+                fontWeight: "bold",
+              }}
+            >
+              Geology Point
+            </Text>
+            <Text
+              style={{ color: "white", marginLeft: 10, fontStyle: "italic" }}
+            >
+              2023 Field Technician
+            </Text>
+            <FlatList
+              data={[
+                { key: "Tested water samples around the world" },
+                {
+                  key: "Drew conclusion based on highly controlled experimentation",
+                },
+                {
+                  key: "Presented findings at a Water Sterwardship Conference  ",
+                },
+              ]}
+              renderItem={({ item }) => <FlatlistLyfe name={item.key} />}
+            />
           </View>
+          <View style={{}}></View>
         </View>
       </View>
     </ScrollView>

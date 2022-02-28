@@ -1,32 +1,12 @@
-import { View, Text,FlatList } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
 
-
+const FlatlistLyfe = (props) => {
   return (
     <View>
-        <Flatlist
-              data={[
-                {
-                  key: "Carried Out everday tasks as part of ongoing research study",
-                },
-                {
-                  key: "Reported findings contributed hypothesis and helped co-author a prffesional findings report",
-                },
-              ]}
-              renderItem={({ item }) => <Text>{item.key}</Text>}
-            />
+      <Text style={{ color: "white", marginLeft: 10 }}>{props.name}</Text>
     </View>
-  )
-}
+  );
+};
 
-export d  <Flatlist
-              data={[
-                {
-                  key: "Carried Out everday tasks as part of ongoing research study",
-                },
-                {
-                  key: "Reported findings contributed hypothesis and helped co-author a prffesional findings report",
-                },
-              ]}
-              renderItem={({ item }) => <Text>{item.key}</Text>}
-            />
+export default FlatlistLyfe;
